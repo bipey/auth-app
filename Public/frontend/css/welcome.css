@@ -1,0 +1,88 @@
+/* General body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Card container styling */
+.card {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    padding: 30px;
+    max-width: 450px;
+    text-align: center;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Card hover effect */
+.card:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px);
+}
+
+/* Text inside the card */
+.card span {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Login link styling */
+.login-link {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect on login link */
+.login-link:hover {
+    background-color: #0056b3;
+    cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .card {
+        padding: 20px;
+        max-width: 90%;
+    }
+
+    .card span {
+        font-size: 16px;
+    }
+
+    .login-link {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+.user {
+    font-weight: bold;
+    color: #007bff;
+}
+.reset-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.reset-button:hover {
+    background-color: #0056b3;
+}

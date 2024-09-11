@@ -1,0 +1,97 @@
+/* General page styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Form container styles */
+div {
+    background-color: white;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+/* Text styles */
+p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Input field */
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Submit button styles */
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+/* Submit button hover effect */
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Auth links container */
+.auth-links {
+    margin-top: 20px;
+}
+
+/* Style for login and sign-up links as buttons */
+.auth-links a {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+/* Login link style */
+.auth-links .login-link {
+    background-color: #28a745;  /* Green for login */
+}
+
+/* Sign Up link style */
+.auth-links .signup-link {
+    background-color: #17a2b8;  /* Teal for sign up */
+}
+
+/* Hover effects for links */
+.auth-links a:hover {
+    opacity: 0.9;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    div {
+        width: 90%;
+    }
+}
