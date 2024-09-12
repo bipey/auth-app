@@ -24,29 +24,29 @@ const registerUser = async (req, res) => {
         
         // Check for empty fields
         if (!email || !fullName || !password || !userName) {
-            return res.status(400).json("All fields are required");
+            return res.status(400).json({message:"All fields are required"});
         }
 
         // Check if email already exists
         const checkEmail = await User.findOne({ email: email });
         if (checkEmail) {
-            return res.status(400).send("Email already exists");
+            return res.status(400).send({message:"Email already exists"});
         }
 
         // Check if username already exists
         const checkUserName = await User.findOne({ userName: userName });
         if (checkUserName) {
-            return res.status(400).json("UserName already exists");
+            return res.status(400).json({message:"UserName already exists"});
         }
 
         // Check password length
         if (password.length < 8) {
-            return res.status(400).json("Password should be of minimum 8 characters");
+            return res.status(400).json({message:"Password should be of minimum 8 characters"});
         }
 
         // Check if passwords match
         if (password !== confirmPassword) {
-            return res.status(400).json("Passwords do not match");
+            return res.status(400).json({message:"Passwords do not match"});
         }
 
         // Create new user
@@ -58,13 +58,13 @@ const registerUser = async (req, res) => {
         });
 
         if (!userData) {
-            return res.status(400).json("Something went wrong while saving data to the database");
+            return res.status(400).json({message:"Something went wrong while saving data to the database"});
         }
 
         return res.status(201).json({ message: "User registered successfully" });
     } catch (error) {
         console.error('Error:', error);
-        return res.status(500).json("An error occurred while creating the user");
+        return res.status(500).json({message:"An error occurred while creating the user"});
     }
 };
 
@@ -206,7 +206,7 @@ try {
 const forgetPassword= async(req,res)=>{
     try {
             const {newPassword, confirmPassword}=req.body
-            console.log(newPassword, confirmPassword)
+       
             const loggedInUser=req.loggedInUser
             if(newPassword.length<8){
                 return res.status(400).json({message:"Password should be of minimum 8 characters"}) 
@@ -233,7 +233,7 @@ const forgetPassword= async(req,res)=>{
 const generateOTP=async(req,res)=>{
    try {
      const email=req.body.email
-     console.log(email)
+
      const user= await User.findOne({email:email})
      if(!user){
          return res.status(401).json("No user found")
@@ -264,8 +264,7 @@ const verifyOTP= async(req, res)=>{
  try {
     const loggedInUser=req.loggedInUser
     const OTP =req.body.otp
-    // console.log(OTP)
-    // console.log(loggedInUser.OTP)
+
 if(!OTP){
     return res.status(401).json({message:"OTP is required"})
 }

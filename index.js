@@ -29,7 +29,7 @@ app.use(express.static(path.join(__dirname, 'Public')));
 
 // Serve a static HTML file or use a templating engine
 app.get("/", (req, res) => {
-    res.sendFile(__dirname + "/Public/frontend/html/register.html");  
+    res.sendFile(__dirname + "/Public/frontend/html/landing.html");  
 });
 
 // Database connection and server start
